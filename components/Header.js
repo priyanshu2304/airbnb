@@ -21,7 +21,7 @@ const Header = () => {
           <AntDesign name="search1" size={24} color="#C71585" />
           <TextInput
             style={styles.textStyle}
-            placeholder="where you want to go"
+            placeholder="where you want to go?"
           />
         </View>
       </ImageBackground>
