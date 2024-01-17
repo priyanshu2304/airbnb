@@ -37,13 +37,13 @@ const Header = () => {
             marginBottom: 20,
           }}
         >
-          <Text style={{ color: "white", fontSize: "25", fontWeight: "bold" }}>
+          <Text style={{ color: "white", fontSize: 25, fontWeight: "bold" }}>
             Not Sure Where to go?
           </Text>
           <Text
             style={{
               color: "white",
-              fontSize: "26",
+              fontSize: 26,
               fontWeight: "bold",
               textAlign: "center",
             }}
