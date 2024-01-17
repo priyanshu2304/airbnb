@@ -14,12 +14,10 @@ import Experience from "../components/Experience";
 const HomeScreen = () => {
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
-      <View>
-        <Header />
-        <Cards />
-        <Explore />
-        <Experience />
-      </View>
+      <Header />
+      <Cards />
+      <Explore />
+      <Experience />
     </ScrollView>
   );
 };

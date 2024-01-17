@@ -8,8 +8,10 @@ import {
 } from "react-native";
 import React from "react";
 import { AntDesign } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 const Header = () => {
+  const navigation = useNavigation();
   return (
     <View>
       <ImageBackground
@@ -27,7 +29,10 @@ const Header = () => {
           />
         </View>
 
-        <Pressable style={styles.buttonStyleContainer}>
+        <Pressable
+          style={styles.buttonStyleContainer}
+          onPress={() => navigation.navigate("Search")}
+        >
           <Text style={styles.buttonStyle}>I'm Flexible</Text>
         </Pressable>
         <View
