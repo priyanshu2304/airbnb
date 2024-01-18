@@ -3,6 +3,7 @@ import React, { useLayoutEffect } from "react";
 import Search from "../data/Search";
 import { useNavigation } from "@react-navigation/native";
 import SearchItem from "../components/SearchItem";
+
 const SearchScreen = () => {
   const data = Search;
   const navigation = useNavigation();
@@ -18,6 +19,7 @@ const SearchScreen = () => {
   return (
     <View>
       <FlatList
+        showsVerticalScrollIndicator={false}
         data={data}
         renderItem={({ item }) => <SearchItem data={item} />}
       />
