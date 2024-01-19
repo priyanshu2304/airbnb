@@ -1,6 +1,7 @@
 import { Pressable, StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
 import { AntDesign } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 const SearchItem = (props) => {
   const {
@@ -19,9 +20,14 @@ const SearchItem = (props) => {
     review,
     image,
   } = props.data;
+
+  const navigation = useNavigation();
   return (
     <View>
-      <Pressable onPress={() => console.warn("hey")} style={{ margin: 10 }}>
+      <Pressable
+        onPress={() => navigation.navigate("Reservation", { ...props.data })}
+        style={{ margin: 10 }}
+      >
         <Image
           style={{ width: "100%", height: 300, borderRadius: 10 }}
           source={{ uri: img }}

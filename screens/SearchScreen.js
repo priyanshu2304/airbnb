@@ -13,7 +13,7 @@ const SearchScreen = () => {
       headerStyle: {
         backgroundColor: "#fd5c63",
       },
-      headerTintColor: "#fff",
+      // headerTintColor: "#fff",
     });
   });
   return (

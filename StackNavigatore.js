@@ -4,6 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./screens/HomeScreen";
 import SearchScreen from "./screens/SearchScreen";
+import Reservation from "./screens/Reservation";
 const StackNavigatore = () => {
   const Stack = createNativeStackNavigator();
   return (
@@ -19,6 +20,7 @@ const StackNavigatore = () => {
           component={SearchScreen}
           //   options={{ headerShown: false }}
         />
+        <Stack.Screen name="Reservation" component={Reservation} />
       </Stack.Navigator>
     </NavigationContainer>
   );
