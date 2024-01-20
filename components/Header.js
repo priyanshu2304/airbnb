@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     width: 220,
     marginLeft: "auto",
     marginRight: "auto",
-    borderRadius: "20",
+    borderRadius: 20,
     padding: 8,
   },
   textStyle: {

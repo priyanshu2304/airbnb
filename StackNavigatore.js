@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./screens/HomeScreen";
 import SearchScreen from "./screens/SearchScreen";
 import Reservation from "./screens/Reservation";
+import ConfirmScreen from "./screens/ConfirmScreen";
 const StackNavigatore = () => {
   const Stack = createNativeStackNavigator();
   return (
@@ -20,7 +21,23 @@ const StackNavigatore = () => {
           component={SearchScreen}
           //   options={{ headerShown: false }}
         />
-        <Stack.Screen name="Reservation" component={Reservation} />
+        <Stack.Screen
+          name="Reservation"
+          component={Reservation}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Confirm"
+          component={ConfirmScreen}
+          options={{
+            title: "Confirm and Pay",
+            headerTitle: "Confirm and Pay",
+            headerStyle: {
+              backgroundColor: "#fd5c63",
+            },
+            headerTintColor: "#fff",
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

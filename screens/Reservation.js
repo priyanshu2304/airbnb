@@ -7,7 +7,7 @@ import {
   Pressable,
 } from "react-native";
 import React, { useState } from "react";
-import { useRoute } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import { FontAwesome } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import { SimpleLineIcons } from "@expo/vector-icons";
@@ -22,23 +22,16 @@ import moment from "moment";
 
 const Reservation = () => {
   const route = useRoute();
-  const {
-    img,
-    location,
-    title,
-    description,
-    star,
-    price,
-    total,
-    long,
-    lat,
-    key,
-    distance,
-    person,
-    review,
-    image,
-  } = route.params;
+  const { img, location, title, description, star, price, person, image } =
+    route.params;
   const [range, setRange] = useState({});
+  const firstDate = new Date(range.firstDate);
+  const secondDate = new Date(range.secondDate);
+  const navigation = useNavigation();
+  const timeDifference = secondDate - firstDate;
+
+  const daysDifference = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+
   return (
     <>
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -107,7 +100,7 @@ const Reservation = () => {
                   style={{
                     width: 50,
                     height: 50,
-                    borderRadius: "50%",
+                    borderRadius: 50,
                   }}
                   source={{ uri: image }}
                 />
@@ -357,7 +350,14 @@ const Reservation = () => {
         <Pressable
           disabled={!range.firstDate && !range.secondDate}
           style={{ backgroundColor: "#fd5c63", padding: 15 }}
-          onPress={() => console.warn("hey")}
+          onPress={() =>
+            navigation.navigate("Confirm", {
+              no_of_days: daysDifference,
+              ...route.params,
+              startDate: range.firstDate,
+              endDate: range.secondDate,
+            })
+          }
         >
           <Text style={{ color: "white" }}>Reserve</Text>
         </Pressable>
