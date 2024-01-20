@@ -23,7 +23,7 @@ const ConfirmScreen = () => {
     price,
     no_of_days,
   } = route.params;
-
+  const navigator = useNavigation();
   const [add, setAdd] = useState(1);
   const serviceFee = 20;
   const taxes = 45;
@@ -238,6 +238,7 @@ const ConfirmScreen = () => {
             marginTop: 10,
             alignItems: "center",
           }}
+          onPress={() => navigator.navigate("Final Screen")}
         >
           <Text style={{ color: "white" }}>Confirm and Pay</Text>
         </Pressable>
